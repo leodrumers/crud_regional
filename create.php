@@ -47,6 +47,9 @@
             header("Location: index.php");
         }
     }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,8 +60,7 @@
 </head>
  
 <body>
-    <div class="container">
-     
+    <div class="container">     
                 <div class="span10 offset1">
                     <div class="row">
                         <h3>Create un estudiante</h3>
