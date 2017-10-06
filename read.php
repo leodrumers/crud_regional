@@ -1,5 +1,5 @@
 <?php
-    require 'database.php';
+    include 'database.php';
     $id = null;
     if ( !empty($_GET['id'])) {
         $id = $_REQUEST['id'];
@@ -68,9 +68,34 @@
                                 <?php echo $data['telefono'];?>
                             </label>
                         </div>
+                        <br>
+             <table class="table table-striped table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Materia</th>
+                      <th>Calificación</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+ <?php 
+
+                      $pdo2 = Database::connect();
+                   $sqlNotas ="SELECT calificacion, materias.nombre_materia FROM `calificaciones` INNER JOIN materias WHERE id_estudiante =". $data['id'] ." AND materias.id = calificaciones.id_materia";
+                   
+                   foreach ($pdo2->query($sqlNotas) as $row) {
+                            echo '<tr>';
+                            echo '<td>'. $row['nombre_materia'] . '</td>';
+                            echo '<td>'. $row['calificacion'] . '</td>';
+                            echo '</tr>';
+                   }
+                   Database::disconnect(); 
+    ?>
+                </tbody>
+            </table>
                       </div>
                         <div class="form-actions">
-                          <a class="btn" href="index.php">Back</a>
+                          <a class="btn" href="index.php">Regresar</a>
                        </div>
                      
                       
