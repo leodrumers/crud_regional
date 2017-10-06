@@ -12,7 +12,7 @@
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //$sql = "SELECT * FROM `datos_pesonales` where id = ?";
        // $sql = "SELECT * FROM datos_pesonales, calificaciones, materias where datos_pesonales.id = ? and calificaciones.id_estudiante = ?";
-        $sql = "SELECT * FROM `datos_pesonales` where id = ?";
+        $sql = "SELECT * FROM `datos_personales` where id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
         $data = $q->fetch(PDO::FETCH_ASSOC);

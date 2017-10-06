@@ -112,7 +112,7 @@ session_start();
                   <?php
                    include 'database.php';
                    $pdo = Database::connect();
-                   $sql = 'SELECT * FROM `datos_pesonales` ORDER by nombre';
+                   $sql = 'SELECT * FROM `datos_personales` ORDER by nombre';
                    foreach ($pdo->query($sql) as $row) {
                             echo '<tr>';
                               echo '<td>'. $row['nombre'] . '</td>';

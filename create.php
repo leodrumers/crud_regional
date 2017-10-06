@@ -1,5 +1,4 @@
 <?php
-     
     require 'database.php';
  
     if ( !empty($_POST)) {
@@ -40,7 +39,7 @@
         if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO `datos_pesonales` (nombre,apellido,documento,telefono) values(?, ?, ?,?)";
+            $sql = "INSERT INTO `datos_personales` (nombre,apellido,documento,telefono) values(?, ?, ?,?)";
             $q = $pdo->prepare($sql);
             $q->execute(array($nombre,$apellido,$documento,$telefono));
             Database::disconnect();
